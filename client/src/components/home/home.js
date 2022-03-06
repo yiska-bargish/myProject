@@ -29,7 +29,7 @@ export default function Home() {
                 ))
                 }
             </div>
-            <br/>
+            <br />
             <footer style={{ backgroundColor: "grey" }}>
                 <div>
                     <h3>קטגוריות ראשיות</h3>
