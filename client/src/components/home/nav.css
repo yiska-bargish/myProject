@@ -1,8 +1,8 @@
-.navBar-container{
+.navBar-container {
     background-image: url("title2.jpg");
     color: white;
     /* background-color: brown; */
-    height: 18vh;
+    height: 159px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,47 +11,165 @@
     /* color: black; */
     /* text-align: center; */
 }
-.harmonia-logo.navbar-brand{
-width: 100%;
+
+.harmonia-logo.navbar-brand {
+    width: 100%;
 }
 
-.title{
+.harmonia-logo {
+    width: 338px;
+    height: 110px;
+    top: auto;
+    bottom: 25px;
+}
+
+.topRight {
+    position: absolute;
+    top: 2px;
+    right: 2px px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    direction: rtl;
+}
+
+.right4,
+.left4 {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    direction: rtl;
+    border-top: 1px solid;
+    min-width: 420px;
+}
+
+.right4 {
+    padding: 0px 20px;
+}
+
+.left4 {
+    right: auto;
+    left: 60px;
+}
+
+.shpWrap {
+    margin-top: 30px;
+}
+
+.right4 .link>p:after,
+.left4 .link>p:after {
+    -webkit-transition: all 3s;
+    transition: all 3s;
+}
+
+.right4 .link:hover>p:after,
+.right4 .link:hover>span:after,
+.left4 .link:hover>p:after,
+.left4 .link:hover>span:after {
+    content: "";
+    position: absolute;
+    bottom: auto;
+    top: -2px;
+    display: block;
+    right: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+    height: 3px;
+    background: rgb(221, 198, 122);
+    transition: width 0.4s linear;
+}
+
+.right4 .link,
+.left4 .link {
+    display: block;
+    height: 100%;
+    font-size: 17px;
+    color: rgb(255, 255, 255) !important;
+    text-align: center;
+    line-height: 40px;
+    box-sizing: border-box;
+    overflow: visible;
+    max-height: none;
+    position: relative;
+    padding: 0;
+    font-weight: 400;
+    width: auto;
+    -webkit-transition: all 3s;
+    transition: all 3s;
+}
+
+.right4 .link * {
+    -webkit-transition: all 3s;
+    transition: all 3s;
+}
+
+.right4 .link:not(:first-child),
+.left4 .link:not(:first-child) {
+    padding-right: 12px;
+}
+
+.topRight .link {
     color: white;
-    width: 20px;
-    margin-right: 440px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .link{
-    color: white;
-    font-family: "Lucida Console", "Courier New", monospace;
     font-size: 15px;
-  }
-  .link:hover{
-      color: gray;
-  }
-  .home{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      /* position: relative;
+    text-decoration: none;
+    margin: 5px 2px;
+    font-size: 12px;
+}
+
+.title {
+    position: absolute;
+    top: 10px;
+    left: 40%;
+    height: 120px;
+}
+
+.link {
+    color: white;
+    /* font-family: "Lucida Console", "Courier New", monospace; */
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: gray;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* position: relative;
       display: inline-block; 
       width: 100%; 
       height: auto;
        margin: 0%; 
        padding: 0%; */
-  }
+}
 
-  .imgHome{
-      height: 200px;
-      width: 400px;
-  }
+.carousel .slide img {
+    max-height: 600px;
+    /* change this to whatever you want */
+    width: auto;
+}
 
-  .nisayon{
-    position: relative; 
-    display: inline-block;  
+.imgHome {
+    height: 200px;
+    width: 400px;
+}
+
+.nisayon {
+    position: relative;
+    display: inline-block;
     height: auto;
     width: 100%;
-  }
+}
+
 
 /* .nisayon8{
 position: relative;
@@ -62,8 +180,72 @@ position: relative;
   padding: 0%;
 } */
 
-.about{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  text-align: right;
+.shopWrap {
+    margin-top: 30px;
 }
 
+.shopWrap svg {
+    color: rgb(221, 198, 122);
+}
+
+.about {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    text-align: right;
+}
+
+.modal-dialog {
+    position: absolute;
+    z-index: 1111;
+    top: 31px;
+    width: 310px;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+}
+
+.home2 {
+    position: relative;
+    margin-top: 10px;
+}
+
+.home2 img {
+    transition: all .7s ease-in-out;
+    -webkit-backface-visibility: hidden;
+}
+
+.home2:hover img {
+    transform: scale(1.05);
+}
+
+.cat-text-wrapper {
+    background-color: white;
+    top: auto;
+    height: 24px;
+    width: 175px;
+    position: absolute;
+    margin: 0;
+    left: 0;
+    transform: rotate(0);
+    opacity: .75;
+    bottom: 10px;
+    height: 25px;
+    width: 90%;
+    left: 5%;
+    text-align: center;
+}
+
+.cat-text {
+    background-color: rgba(255, 255, 255, 0);
+    height: auto;
+    margin: 0;
+    -ms-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    font-family: 'Assistant', Helvetica, Arial, serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 13.78px;
+    color: #333333;
+    text-align: center;
+    line-height: 18.0px;
+    direction: rtl;
+}
