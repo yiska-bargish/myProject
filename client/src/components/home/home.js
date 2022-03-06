@@ -16,6 +16,7 @@ export default function Home() {
 
     return (
         <>
+        <p>ggg</p>
             {/* <img className="nisayon" src={image} ></img> */}
             <img className="nisayon" src={newimg} ></img>
             <div style={{ backgroundImage: i, width: '500px' }}></div>
