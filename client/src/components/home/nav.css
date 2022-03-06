@@ -8,8 +8,48 @@
     flex-wrap: wrap;
     justify-content: space-around;
     direction: rtl;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
     /* color: black; */
     /* text-align: center; */
+}
+
+.navBar-container2 {
+    background-image: url("title2.jpg");
+    color: white;
+    /* background-color: brown; */
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    direction: rtl;
+    position: relative;
+    padding-top: 10px;
+    /* color: black; */
+    /* text-align: center; */
+}
+
+.navBar-container2 h3 {
+    display: block;
+    width: 100%;
+    font-size: 17px;
+    color: #ddc67a;
+    line-height: 52px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0px;
+    margin-bottom: 15px;
+    border: 0px;
+    position: relative;
+    text-align: right;
+}
+
+.carousel {
+    margin-top: 160px;
 }
 
 .harmonia-logo.navbar-brand {
@@ -130,6 +170,27 @@
 }
 
 .link {
+    color: white;
+    /* font-family: "Lucida Console", "Courier New", monospace; */
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.link-bottom {
+    text-align: right;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    /* font-family: "Lucida Console", "Courier New", monospace; */
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.link-bottom p,
+.navBar-container2 p {
+    margin-block-end: 0.5rem;
+    margin-block-start: 0.5rem;
+    text-align: right;
     color: white;
     /* font-family: "Lucida Console", "Courier New", monospace; */
     font-size: 15px;
