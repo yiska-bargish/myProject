@@ -5,7 +5,7 @@ import GetUser from "../../service/service"
 import { IconButton, Icon } from '@mui/material'
 import i from '../../assets/img/14.jpg'
 // import image from './image.jpg'
-import newimg from './25.jpg'
+import newimg from './2.jpg'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
