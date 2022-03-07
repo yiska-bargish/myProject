@@ -2,7 +2,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import action from '../../redux/actions'
-import TextField from '@mui/material/TextField';
+import TextField from 'mui-rtl-textfield'
 import Button from '@mui/material/Button';
 import { Link, Redirect, useHistory } from 'react-router-dom';
 
@@ -33,9 +33,9 @@ export default function SignIn() {
             <input type="email" id='email' placeholder='הכנס מייל'></input>
             <input id='phone' placeholder='הכנס טלפון'></input>
             <button type='submit'>הרשם</button> */}
-            <br />
-            <h2>הרשמה</h2>
-            <br />
+        
+            <h1 className='custom-h1'>הרשמה</h1>
+          
             {/* <TextField
                 id="userName"
                 label="שם משתמש"
@@ -96,8 +96,8 @@ export default function SignIn() {
                 required
             />
             <br />
-            <p>מאשר/ת קבלת מיילים <input id='news' type="checkbox"></input></p>
-            <Button variant="contained" type='submit'>הרשם</Button>
+            <p style={{direction:"ltr"}}>מאשר/ת קבלת מיילים <input id='news' type="checkbox"></input></p>
+            <button className='btn-gold-small' type='submit'>הרשם</button>
             <br /> <br />        
         </form>
     )

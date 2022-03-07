@@ -1,4 +1,15 @@
 .App {
-  text-align: center;
+    text-align: center;
+    margin-top: 170px;
 }
 
+img {
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.MuiInputLabel-formControl {
+    text-align: right!important;
+    right: 0;
+    transform-origin: top right!important;
+}
