@@ -68,6 +68,8 @@ export default function Updates() {
                 <input type='file' onChange={(e) => setImg(e.target.files[0])}></input>
                 <img src={img ? URL.createObjectURL(img) : ''} style={{ width: '200px' }}></img>
                 <input id='color' value={color} onChange={e => setColor(e.target.value)} type='color'></input>
+                // לבדוק שתקין
+                <input defaultValue={0} type='number'></input>
                 <button type='button' onClick={() => {
                     setArrColor([...arrcolor, { color: color }])
                     // setColor('')
