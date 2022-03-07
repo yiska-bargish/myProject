@@ -11,7 +11,7 @@ export default function Branch() {
     }, [])
     return (
         <>
-            <h1>{data?.product?.branch?.length} סניפים בארץ</h1>
+            <h1 className='custom-h1'>{data?.product?.branch?.length} סניפים בארץ</h1>
             {data?.product?.branch?.map((item, key) => (
                 <div>
                     <h2>{item.branchName}</h2>

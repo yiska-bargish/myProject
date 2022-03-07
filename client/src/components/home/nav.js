@@ -63,13 +63,14 @@ export default function NavFunc() {
             <Modal.Body>
               <Buy />
             </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={closeModal}>
+            <Modal.Footer className="footer-wrapper">
+              <button
+              class="btn-black" variant="secondary" onClick={closeModal}>
                 ביטול
-              </Button>
-              <Button variant="primary" onClick={() => goToPay()}>
+              </button>
+              <button   class="btn-gold" onClick={() => goToPay()}>
                 לתשלום
-              </Button>
+              </button>
             </Modal.Footer>
           </Modal.Dialog>
         )}

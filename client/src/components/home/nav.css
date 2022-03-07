@@ -252,6 +252,24 @@ position: relative;
 .about {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
     text-align: right;
+    text-align: right;
+    margin: 0px auto;
+    border: 1px solid #ceb081;
+    background-color: #fff;
+    padding: 30px;
+    direction: ltr;
+    color: #ceb081!important;
+    box-shadow: 0 0 14px 1px #ceb081 inset;
+    flex-grow: 1;
+    width: 40%;
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.about b {
+    color: #828282;
+    font-weight: 100;
 }
 
 .modal-dialog {
@@ -271,6 +289,7 @@ position: relative;
 .home2 img {
     transition: all .7s ease-in-out;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .home2:hover img {
