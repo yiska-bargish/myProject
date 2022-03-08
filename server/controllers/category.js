@@ -26,9 +26,6 @@ const getAllcategories = async (req, res) => {
         res.status(500).send(err.message))
 }
 
-// updateCategory
-// deleteCategory
-
 const updateCategory = async (req, res) => {
     console.log('updateCategory!!!')
     Category.findByIdAndUpdate(req.body._id, req.body, { new: true })
