@@ -13,9 +13,7 @@ const SaleComponent = props => {
     }
 
     return <>
-        <h3 class="custom-h1">הכנס מבצע</h3>
-
-        <input id='saleDescription' placeholder='תאור מבצע' onChange={e => onInputChange('description', e)}></input>
+        <input id='saleDescription' placeholder='הכנס תיאור מבצע' onChange={e => onInputChange('description', e)}></input>
         <input id='saleStartDate' placeholder='הכנס תאריך התחלה' type="date" onChange={e => onInputChange('endDate', e)}></input>
         <input id='saleEndDate' placeholder='הכנס תאריך סיום' type="date" onChange={e => onInputChange('startDate', e)}></input>
         <button onClick={addSale} class="btn-gold-small">הוסף</button>

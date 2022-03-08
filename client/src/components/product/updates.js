@@ -62,10 +62,11 @@ export default function Updates() {
                         <option value={key}>{item.categoryName}</option>
                     ))}
                 </select>
-                {/* מלאי */}
-                <input id='productName' placeholder='הכנס שם מוצר'></input>
+                <input id='productName' placeholder='הכנס שם'></input>
                 <input id='price' placeholder='הכנס מחיר'></input>
                 <textarea id='description' placeholder='הכנס תיאור'></textarea>
+                {/* מלאי */}
+                <input id='count' type='number' placeholder='הכנס מלאי' ></input>
                 <input type='file' onChange={(e) => setImg(e.target.files[0])}></input>
                 <img src={img ? URL.createObjectURL(img) : ''} style={{ width: '200px' }}></img>
                 <input id='color' value={color} onChange={e => setColor(e.target.value)} type='color'></input>
@@ -83,7 +84,7 @@ export default function Updates() {
             </div>
             <div className='nihul'>
                 <h3 class="custom-h1">ניהול קטגוריות</h3>
-                {addCategory ? <input id='newCategory' placeholder='הכנס קטגוריה' /> : <button type="button" className='btn-black-small' onClick={() => setAddCategory(true)}>הוספת קטגוריה</button>}
+                {addCategory ? <input id='newCategory' placeholder='הכנס שם קטגוריה' /> : <button type="button" className='btn-black-small' onClick={() => setAddCategory(true)}>הוספת קטגוריה</button>}
                 <button type='submit' class="btn-gold-small">הוסף</button>
                 {/* <button type='submit'>מחק</button> */}
 
@@ -94,6 +95,8 @@ export default function Updates() {
                 <Sale />
 
             </div>
+            <br />
+
             {/* <div className='nihul'>
                 <h3 class="custom-h1">ניהול סניפים</h3>
                 
@@ -106,5 +109,6 @@ export default function Updates() {
             {/* <button to="/home" onClick={()=>{dispatch(action.logout())}}>log off</button> */}
             {/* <button onClick={"/home"}>log off</button>  */}
         </form>
+
     )
 }
