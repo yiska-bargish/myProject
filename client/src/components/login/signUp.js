@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import action from '../../redux/actions'
 import TextField from 'mui-rtl-textfield'
@@ -33,9 +33,9 @@ export default function SignIn() {
             <input type="email" id='email' placeholder='הכנס מייל'></input>
             <input id='phone' placeholder='הכנס טלפון'></input>
             <button type='submit'>הרשם</button> */}
-        
+
             <h1 className='custom-h1'>הרשמה</h1>
-          
+
             {/* <TextField
                 id="userName"
                 label="שם משתמש"
@@ -96,9 +96,9 @@ export default function SignIn() {
                 required
             />
             <br />
-            <p style={{direction:"ltr"}}>מאשר/ת קבלת מיילים <input id='news' type="checkbox"></input></p>
+            <p style={{ direction: "ltr" }}>מאשר/ת קבלת מיילים <input id='news' type="checkbox"></input></p>
             <button className='btn-gold-small' type='submit'>הרשם</button>
-            <br /> <br />        
+            <br /> <br />
         </form>
     )
 }

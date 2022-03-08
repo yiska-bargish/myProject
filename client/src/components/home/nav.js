@@ -52,28 +52,30 @@ export default function NavFunc() {
       <Navbar className="navBar-container" expand="lg">
         <Container>
           <div className="shopWrap" onClick={openModal}>
-            <i className="far fa-shopping-cart"></i>
-            <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
-          
+
+            {/* <i className="far fa-shopping-cart"></i> */}
+            {/* <FontAwesomeIcon icon={["fas", "shopping-cart"]} /> */}
+            <img src="https://d3m9l0v76dty0.cloudfront.net/layout3/stores/woodstock/cart.png" />
+            <p> {data?.shoppingCart.length} </p>
           </div>  {showModal && (
-          <Modal.Dialog>
-            {/* <Modal.Header closeButton>
+            <Modal.Dialog>
+              {/* <Modal.Header closeButton>
                     <Modal.Title>סגור</Modal.Title>
                 </Modal.Header> */}
-            <Modal.Body>
-              <Buy />
-            </Modal.Body>
-            <Modal.Footer className="footer-wrapper">
-              <button
-              class="btn-black" variant="secondary" onClick={closeModal}>
-                ביטול
+              <Modal.Body>
+                <Buy />
+              </Modal.Body>
+              <Modal.Footer className="footer-wrapper">
+                <button
+                  class="btn-black" variant="secondary" onClick={closeModal}>
+                  ביטול
               </button>
-              <button   class="btn-gold" onClick={() => goToPay()}>
-                לתשלום
+                <button class="btn-gold" onClick={() => goToPay()}>
+                  לתשלום
               </button>
-            </Modal.Footer>
-          </Modal.Dialog>
-        )}
+              </Modal.Footer>
+            </Modal.Dialog>
+          )}
           <LogoutIcon
             onClick={() => {
               dispatch(action.logout());
@@ -142,7 +144,7 @@ export default function NavFunc() {
           }
         </Container>
 
-    
+
       </Navbar>
       {/* <div>
         <form onSubmit={(e)=>func(e)}>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import action from '../../redux/actions'
 import { Redirect, useHistory } from 'react-router-dom';
+import Sale from '../sale/sale'
 
 export default function Updates() {
 
@@ -89,22 +90,21 @@ export default function Updates() {
             </div>
             <div className='nihul'>
                 <h3 class="custom-h1">ניהול מבצעים</h3>
-                {/*                 
-                {addCategory ? <input id='newCategory' placeholder='הכנס מבצע' /> : <button type="button" onClick={() => setAddCategory(true)}>הוספת מבצע</button>}
-                <button type='submit'>הוסף</button> */}
+
+                <Sale />
 
             </div>
-            <div className='nihul'>
+            {/* <div className='nihul'>
                 <h3 class="custom-h1">ניהול סניפים</h3>
-                {/* 
+                
                 {addCategory ? <input id='newSale' placeholder='הכנס סניף' /> : <button type="button" onClick={() => setAddCategory(true)}>הוספת סניף</button>}
                 <button type='submit'>הוסף</button>
-                <button type='submit'>מחק</button> */}
+                <button type='submit'>מחק</button>
 
-            </div>
+            </div> */}
+
             {/* <button to="/home" onClick={()=>{dispatch(action.logout())}}>log off</button> */}
             {/* <button onClick={"/home"}>log off</button>  */}
         </form>
     )
 }
-//addProduct

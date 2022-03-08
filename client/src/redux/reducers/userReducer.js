@@ -7,7 +7,7 @@ const initialState = {
     adminAuth: '987654321',
     adminEmail: 'admin@gmail.com',
     isAdmin: false,
-    userBasket:[]
+    userBasket: []
 }
 
 const user = {
@@ -15,10 +15,11 @@ const user = {
         state.users = action.payload
     },
     addUser(state, action) {
-        debugger
+
         state.currentUser = action.payload
         if (action.payload?._id)
             state.users.push(action.payload)
+
     },
     login(state, action) {
         state.currentUser = action.payload
@@ -33,7 +34,7 @@ const user = {
         state.currentUser = null
         state.isAdmin = false
     },
-    getBasketByUserId(state,action){
+    getBasketByUserId(state, action) {
         state.userBasket = action.payload
     }
     , initialState

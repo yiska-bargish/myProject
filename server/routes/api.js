@@ -23,5 +23,7 @@ router.get('/getAllBranch', branch.getAllBranch)
 router.get('/getBasketsByUserId/:id', basket.getBasketsByUserId)
 router.post('/createBasket', basket.createBasket)
 router.get('/getRelevantSales', sale.getCurrentSales)
+router.post('/createSale', sale.createSale)
+
 
 module.exports = router
