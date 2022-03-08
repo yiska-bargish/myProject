@@ -49,59 +49,60 @@ export default function Updates() {
         history.push('/' + data?.product?.categories.find(x => x._id == p.categoryCode)?.categoryName)
     }
 
-    if (!data?.user?.isAdmin)
-        return <Redirect to='/home'></Redirect>
+    // if (!data?.user?.isAdmin)
+    //     return <Redirect to='/home'></Redirect>
 
     return (
-        <form onSubmit={(e => initProduct(e))}>
+        <form className="updates" onSubmit={(e => initProduct(e))}>
             <div className='nihul'>
-                <h3>ניהול מוצרים</h3>
+                <h3 class="custom-h1">ניהול מוצרים</h3>
                 <select id='category'>
                     {data?.product?.categories?.map((item, key) => (
                         <option value={key}>{item.categoryName}</option>
                     ))}
                 </select>
-                {/* מלאי */} 
+                {/* מלאי */}
                 <input id='productName' placeholder='הכנס שם מוצר'></input>
                 <input id='price' placeholder='הכנס מחיר'></input>
                 <textarea id='description' placeholder='הכנס תיאור'></textarea>
                 <input type='file' onChange={(e) => setImg(e.target.files[0])}></input>
                 <img src={img ? URL.createObjectURL(img) : ''} style={{ width: '200px' }}></img>
                 <input id='color' value={color} onChange={e => setColor(e.target.value)} type='color'></input>
-                // לבדוק שתקין
-                <input defaultValue={0} type='number'></input>
-                <button type='button' onClick={() => {
+                <button type='button' class="btn-black-small" onClick={() => {
                     setArrColor([...arrcolor, { color: color }])
                     // setColor('')
                 }}>הוסף צבע</button>
-                {arrcolor?.map((item) => (
-                    <div style={{ backgroundColor: item.color, width: '50px', height: '50px' }}></div>
-                ))}
-                <button type='submit'>הוסף</button>
+                <br />
+                <div className="background-wrapper">
+                    {arrcolor?.map((item) => (
+                        <div style={{ backgroundColor: item.color, width: '30px', height: '30px' }}></div>
+                    ))}</div>
+                <br />
+                <button type='submit' class="btn-gold-small">הוסף</button>
             </div>
             <div className='nihul'>
-                <h3>ניהול קטגוריות</h3>
-                {addCategory ? <input id='newCategory' placeholder='הכנס קטגוריה' /> : <button type="button" onClick={() => setAddCategory(true)}>הוספת קטגוריה</button>}
-                <button type='submit'>הוסף</button>
+                <h3 class="custom-h1">ניהול קטגוריות</h3>
+                {addCategory ? <input id='newCategory' placeholder='הכנס קטגוריה' /> : <button type="button" className='btn-black-small' onClick={() => setAddCategory(true)}>הוספת קטגוריה</button>}
+                <button type='submit' class="btn-gold-small">הוסף</button>
                 {/* <button type='submit'>מחק</button> */}
 
             </div>
             <div className='nihul'>
-                <h3>ניהול מבצעים</h3>
-{/*                 
+                <h3 class="custom-h1">ניהול מבצעים</h3>
+                {/*                 
                 {addCategory ? <input id='newCategory' placeholder='הכנס מבצע' /> : <button type="button" onClick={() => setAddCategory(true)}>הוספת מבצע</button>}
                 <button type='submit'>הוסף</button> */}
 
             </div>
             <div className='nihul'>
-                <h3>ניהול סניפים</h3>
-{/* 
+                <h3 class="custom-h1">ניהול סניפים</h3>
+                {/* 
                 {addCategory ? <input id='newSale' placeholder='הכנס סניף' /> : <button type="button" onClick={() => setAddCategory(true)}>הוספת סניף</button>}
                 <button type='submit'>הוסף</button>
                 <button type='submit'>מחק</button> */}
 
             </div>
-            <button to="/home" onClick={()=>{dispatch(action.logout())}}>log off</button>
+            {/* <button to="/home" onClick={()=>{dispatch(action.logout())}}>log off</button> */}
             {/* <button onClick={"/home"}>log off</button>  */}
         </form>
     )
