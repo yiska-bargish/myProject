@@ -7,6 +7,7 @@ import { AddShoppingCartIcon } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 export default function Products() {
+
   const dispatch = useDispatch();
   const data = useSelector((state) => state.product);
   const dataUser = useSelector((state) => state.user);

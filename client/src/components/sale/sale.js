@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const SaleComponent = props => {
+
     const [sale, setSale] = useState({});
     const addSale = (a, b, c) => {
         debugger

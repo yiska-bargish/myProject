@@ -8,7 +8,6 @@ export default function Updates() {
 
     const dispatch = useDispatch()
     const data = useSelector(state => state)
-
     const [img, setImg] = useState('')
     const [arrcolor, setArrColor] = useState([])
     const [color, setColor] = useState()

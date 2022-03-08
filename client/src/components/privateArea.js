@@ -4,9 +4,11 @@ import actions from '../redux/actions'
 import { useHistory } from 'react-router-dom'
 
 export default function PrivateArea() {
+
   const dispatch = useDispatch()
   const data = useSelector(state => state)
   const history = useHistory()
+  
   useEffect(() => {
     dispatch(actions.getBasketByUserId(data.user?.currentUser?._id))
   }, [])

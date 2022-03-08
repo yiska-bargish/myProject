@@ -5,8 +5,8 @@ import { useHistory } from "react-router-dom";
 import { getStepButtonUtilityClass } from "@mui/material";
 
 export default function Cart() {
-  const history = useHistory();
 
+  const history = useHistory();
   const [sum, setSum] = useState();
   const [buy, setBuy] = useState(false);
   const data = useSelector((state) => state.product);

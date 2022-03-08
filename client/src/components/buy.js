@@ -5,6 +5,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
 import actions from "../redux/actions";
 
 export default function Buy(props) {
+
   const [sum, setSum] = useState(0);
   const data = useSelector((state) => state.product);
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ export default function Buy(props) {
           ></img>
          
           <h5> {data?.products?.find((x) => x._id == item.id)?.price}</h5>   
-     {<h5>ש"ח</h5>}
+          {<h5>ש"ח</h5>}
           <lable>
             {/* כמות:{" "} */}
             <input

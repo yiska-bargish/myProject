@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import actions from "../../redux/actions";
 
 export default function Details() {
+
   const history = useHistory();
   const data = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -17,9 +18,9 @@ export default function Details() {
       () =>
         history.push(
           `/${
-            data?.product?.categories?.find(
-              (x) => x._id == data?.product?.category
-            )?.categoryName
+          data?.product?.categories?.find(
+            (x) => x._id == data?.product?.category
+          )?.categoryName
           }`
         ),
       2000
@@ -48,11 +49,11 @@ export default function Details() {
             {data?.product?.products?.find((x) => x._id == id)?.description}
           </h6>
           <hr></hr>  <h5>ש"ח</h5> <h5>
-           
+
             {data?.product?.products?.find((x) => x._id == id)?.price}{" "}
           </h5> {" "}
-         
-        {" "}
+
+          {" "}
           <hr></hr>
           {/* {data?.product?.products?.find(x => x._id == id)?.description} */}
           <div className="background-wrapper">
@@ -69,24 +70,24 @@ export default function Details() {
               ))}
           </div>
           <div className="footer-wrapper">
-            <button class="btn-gold" onClick={() => addFunc()}>
-              הוסף לסל
-            </button>
+            <button class="btn-gold" onClick={() => addFunc()}>הוסף לסל</button>
+
             <button
               class="btn-black"
               onClick={() =>
                 history.push(
                   `/${
-                    data?.product?.categories?.find(
-                      (x) => x._id == data?.product?.category
-                    )?.categoryName
+                  data?.product?.categories?.find(
+                    (x) => x._id == data?.product?.category
+                  )?.categoryName
                   }`
                 )
               }
             >
               הקודם
             </button>
-          </div><br></br>
+          </div>
+          <br></br>
           {add ? <h4 >!!!המוצר נוסף לסל בהצלחה</h4> : null}
         </div>
       </div>

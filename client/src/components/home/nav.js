@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   Navbar,
   Container,
@@ -16,7 +16,9 @@ import Buy from "../buy";
 import { useHistory } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import title from "./title.png";
+
 export default function NavFunc() {
+
   const history = useHistory();
   const dispatch = useDispatch();
   const data = useSelector((state) => state.product);
@@ -52,9 +54,6 @@ export default function NavFunc() {
       <Navbar className="navBar-container" expand="lg">
         <Container>
           <div className="shopWrap" onClick={openModal}>
-
-            {/* <i className="far fa-shopping-cart"></i> */}
-            {/* <FontAwesomeIcon icon={["fas", "shopping-cart"]} /> */}
             <img src="https://d3m9l0v76dty0.cloudfront.net/layout3/stores/woodstock/cart.png" />
             <p> {data?.shoppingCart.length} </p>
           </div>  {showModal && (
