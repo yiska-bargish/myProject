@@ -1,5 +1,6 @@
 .navBar-container {
-    background-image: url("title2.jpg");
+    background-image: url("title3.jpg");
+    
     color: white;
     /* background-color: brown; */
     height: 159px;
@@ -18,7 +19,7 @@
 }
 
 .navBar-container2 {
-    background-image: url("title2.jpg");
+    background-image: url("title3.jpg");
     color: white;
     /* background-color: brown; */
     height: auto;
