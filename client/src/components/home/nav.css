@@ -1,5 +1,5 @@
 .navBar-container {
-    background-image: url("title2.jpg");
+    background-image: url("image_bg.png");
     color: white;
     /* background-color: brown; */
     height: 159px;
@@ -13,12 +13,16 @@
     left: 0;
     width: 100%;
     z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
     /* color: black; */
     /* text-align: center; */
 }
 
 .navBar-container2 {
-    background-image: url("title2.jpg");
+    background-image: url("image_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     /* background-color: brown; */
     height: auto;
@@ -74,11 +78,15 @@
     direction: rtl;
 }
 
+.carousel.carousel-slider {
+    max-height: 500px;
+}
+
 .right4,
 .left4 {
     position: absolute;
-    top: 100px;
-    right: 100px;
+    top: 115px;
+    right: 60px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -94,7 +102,7 @@
 
 .left4 {
     right: auto;
-    left: 60px;
+    left: 40px;
 }
 
 .shpWrap {
@@ -165,7 +173,7 @@
 .title {
     position: absolute;
     top: 10px;
-    left: 40%;
+    left: 42%;
     height: 120px;
 }
 
@@ -204,7 +212,7 @@
 .home {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     /* position: relative;
       display: inline-block; 
       width: 100%; 
@@ -254,17 +262,15 @@ position: relative;
     text-align: right;
     text-align: right;
     margin: 0px auto;
-    border: 1px solid #ceb081;
     background-color: #fff;
     padding: 30px;
     direction: ltr;
     color: #ceb081!important;
-    box-shadow: 0 0 14px 1px #ceb081 inset;
     flex-grow: 1;
-    width: 40%;
+    width: 80%;
     position: relative;
     font-size: 16px;
-    line-height: 28px;
+    line-height: 38px;
 }
 
 .about b {
@@ -284,6 +290,7 @@ position: relative;
 .home2 {
     position: relative;
     margin-top: 10px;
+    width: 320px;
 }
 
 .home2 img {
@@ -326,6 +333,6 @@ position: relative;
     font-size: 13.78px;
     color: #333333;
     text-align: center;
-    line-height: 18.0px;
+    line-height: 25px;
     direction: rtl;
 }

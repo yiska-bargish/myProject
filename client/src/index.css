@@ -322,8 +322,8 @@
         font-weight: bold;
         line-height: 20px;
         border-bottom: 1px solid;
-        left: 30%;
-        top: 20px;
+        left: 10%;
+        top: 10px;
         color: rgb(221, 198, 122);
     }
     
@@ -556,14 +556,20 @@
         margin: 10px 20px;
     }
     
+    .MuiFormControl-root {
+        margin-top: -10px!important;
+        width: 300px;
+    }
+    
     .custom-h1 {
         direction: rtl;
         color: rgb(221, 198, 122);
-        border-top: 3px solid;
-        border-bottom: 3px solid;
-        line-height: 80px;
-        max-width: 300px;
-        margin: 20px auto;
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+        line-height: 54px;
+        max-width: 350px;
+        margin: 15px auto;
+        font-size: 24px;
     }
     
     .updates input,

@@ -75,6 +75,8 @@ export default function SignIn() {
       <button className="btn-gold-small" type="submit">
         התחבר
       </button>
+      <br />
+      <br />
     </form>
   );
 }
