@@ -4,13 +4,8 @@ import actions from "../../redux/actions";
 import GetUser from "../../service/service";
 import { IconButton, Icon } from "@mui/material";
 import i from "../../assets/img/14.jpg";
-// import image from './image.jpg'
-// HEAD
-// import newimg from './2.jpg'
 import { Link } from 'react-router-dom'
 
-
-// import newimg from "./2.jpg";
 import img1 from "./1.jpg";
 import img2 from "./2.jpg";
 import img3 from "./3.jpg";
@@ -18,7 +13,7 @@ import img4 from "./4.jpg";
 import img5 from "./5.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-// >>>>>>> dc48ae1dbbee12cf40305262c70a0cf761cbe327
+
 export default function Home() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state);

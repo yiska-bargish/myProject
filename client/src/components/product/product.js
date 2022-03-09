@@ -6,6 +6,7 @@ import { IconButton } from "@mui/material";
 import { AddShoppingCartIcon } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Products() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.product);
@@ -47,16 +48,26 @@ export default function Products() {
                   }
                 </div>
               </Link>
-              {dataUser?.currentUser?.password == dataUser?.adminAuth ? (
-                <>
-                  <button
-                    onClick={() => dispatch(actions.deleteProduct(item._id))}
-                  >
-                    מחיקה
-                  </button>
-                  <button>עדכון</button>
-                </>
-              ) : null}
+             {dataUser?.currentUser?.password == dataUser?.adminAuth ? ( 
+              <>
+                <div className="footer-wrapper">
+                  <div className="svg-wrapper">
+                    <FontAwesomeIcon
+                      icon={["fas", "ban"]}
+                      onClick={() => dispatch(actions.deleteProduct(item._id))}
+                    />
+                  </div>
+                  <div className="svg-wrapper">
+                    <FontAwesomeIcon
+                      icon={["fas", "pen"]}
+                      onClick={() => dispatch(actions.deleteProduct(item._id))}
+                    />
+                  </div>
+
+             
+                </div>{" "}
+              </>
+               ) : null}
             </div>
           ))}
       </>
