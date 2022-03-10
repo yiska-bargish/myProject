@@ -33,7 +33,8 @@ const {lat,lng} = props
   
   export default GoogleApiWrapper({
     //key api
-    apiKey: "AIzaSyD6F5QF6lVOpgYm_FjJAfrMPKFNB26IYBU"
+    // apiKey: "AIzaSyD6F5QF6lVOpgYm_FjJAfrMPKFNB26IYBU"
+    apiKey: ""
     ,region: 'EB',
     language: 'EB'
   })(MapGoogle);

@@ -20,7 +20,7 @@ export default function PrivateArea(props) {
 
 
   if (!data?.user?.userBasket.length > 0)
-    setTimeout(() => history.push('/'), 2000)
+    setTimeout(() => history.push('/'), 3000)
 
   return (
     <div>
