@@ -42,9 +42,10 @@ export default function Cart() {
     });
     dispatch(actions.addBasket(b));
     setBuy(true);
-    setTimeout(() => history.push("/private-area"), 2000);
+    setTimeout(() => history.push({ pathname: "/private-area", state: { isBuy: true } }), 2000);
     dispatch(actions.resetCart());
   }
+
   return (
     <>
       <div class="cart-wrapper">

@@ -3,21 +3,29 @@ import { useDispatch, useSelector } from 'react-redux'
 import actions from '../redux/actions'
 import { useHistory } from 'react-router-dom'
 
-export default function PrivateArea() {
+export default function PrivateArea(props) {
 
   const dispatch = useDispatch()
   const data = useSelector(state => state)
   const history = useHistory()
-  
+
   useEffect(() => {
+    //alert(props.location.state.isBuy) 
     dispatch(actions.getBasketByUserId(data.user?.currentUser?._id))
   }, [])
 
   if (!data.user?.currentUser)
     history.push('/')
 
+
+
+  if (!data?.user?.userBasket.length > 0)
+    setTimeout(() => history.push('/'), 2000)
+
   return (
     <div>
+      {!props?.location?.state?.isBuy ? <><h1>שלום {data.user?.currentUser.userName}</h1>
+        <h3>שמחים לראות אותך באתר שלנו ומאחלים לך קניה מהנה!!</h3></> : <h1>תודה שקנית אצלנו</h1>}
       {data?.user?.userBasket?.map((i, index) => (
         <div class="bag-product" key={i._id}>
           {" "}

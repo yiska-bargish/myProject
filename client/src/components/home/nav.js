@@ -75,12 +75,12 @@ export default function NavFunc() {
               </Modal.Footer>
             </Modal.Dialog>
           )}
-          <LogoutIcon
+          {dataUser?.currentUser ? <LogoutIcon
             onClick={() => {
               dispatch(action.logout());
               history.push("/home");
             }}
-          ></LogoutIcon>
+          ></LogoutIcon> : null}
           <Navbar.Brand className="harmonia-logo">
             {/* <h2 className='title'>הרמוניה לבית</h2> */}
             <img className="title" src={title}></img>

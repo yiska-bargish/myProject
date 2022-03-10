@@ -4,11 +4,14 @@ import actions from '../../redux/actions'
 import GoogleMaps from './googleMaps'
 
 export default function Branch() {
+    
     const dispatch = useDispatch()
     const data = useSelector(state => state)
+
     useEffect(() => {
         dispatch(actions.getAllBranch())
     }, [])
+
     return (
         <>
             <h1 className='custom-h1'>{data?.product?.branch?.length} סניפים בארץ</h1>
@@ -26,7 +29,7 @@ export default function Branch() {
                 <button onClick={() => dispatch(actions.deleteBranch(item._id))}>מחיקה</button>
                 <button>עדכון</button>
             </> : null} */}
-            
+
         </>
     )
 }

@@ -15,11 +15,9 @@ const user = {
         state.users = action.payload
     },
     addUser(state, action) {
-
         state.currentUser = action.payload
         if (action.payload?._id)
             state.users.push(action.payload)
-
     },
     login(state, action) {
         state.currentUser = action.payload

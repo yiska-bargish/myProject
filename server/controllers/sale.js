@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Sale = require('../models/sale')
+const sendEmail = require('./sendEmail')
 
 const createSale = async (req, res) => {
     console.log('createSale!!!')
@@ -7,6 +8,7 @@ const createSale = async (req, res) => {
     try {
         const newSale = await sale.save()
         res.status(200).json({ sale: newSale, message: "new sale created succesfully" });
+        sendEmail.emailToUsers('הנחה מטורפת😁😁', 'בואו להנות ממבצעים משתלמים באתר')
     } catch (err) {
         res.status(500).send(err.message);
     }

@@ -1,20 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import action from '../../redux/actions'
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import Sale from '../sale/sale'
 
-export default function Updates() {
+export default function Updates(props) {
 
     const dispatch = useDispatch()
     const data = useSelector(state => state)
-    const [img, setImg] = useState('')
+    const [img, setImg] = useState(null)
     const [arrcolor, setArrColor] = useState([])
     const [color, setColor] = useState()
+    const [pToUpdate, setPToUpdate] = useState(null)
     const [addCategory, setAddCategory] = useState(false)
     const history = useHistory()
-    async function initProduct(e) {
+
+
+    useEffect(() => {
         debugger
+        if (data.product.pToUpdate)
+            setPToUpdate(data?.product.products.find(x => x._id == data.product.pToUpdate))
+    }, [data.product.pToUpdate])
+
+
+    async function initProduct(e) {
+
         e.preventDefault()
         let p = {}
         if (addCategory) {
@@ -37,37 +47,44 @@ export default function Updates() {
                 .catch(error => console.log('error', error));
         }
         else
-            p.categoryCode = data?.product?.categories[e.target.category.value]._id
+        p.categoryCode = data?.product?.categories[e.target.category.value]._id
         p.productName = e.target.productName.value
         p.price = e.target.price.value
         p.description = e.target.description.value
         p.colors = arrcolor
+        p.count = e.target.count.value
         const formData = new FormData()
         formData.append('file', img)
-        dispatch(action.addProduct({ p: p, file: formData }))
+        if (pToUpdate) {
+            p._id = pToUpdate._id
+            dispatch(action.updateProduct({ p: p, file: img ? formData : null }))
+        }
+        else
+            dispatch(action.addProduct({ p: p, file: formData }))
         dispatch(action.changeCategory(p.categoryCode))
         history.push('/' + data?.product?.categories.find(x => x._id == p.categoryCode)?.categoryName)
     }
 
-    // if (!data?.user?.isAdmin)
-    //     return <Redirect to='/home'></Redirect>
+    if (!data?.user?.isAdmin)
+        return <Redirect to='/home'></Redirect>
 
     return (
         <form className="updates" onSubmit={(e => initProduct(e))}>
             <div className='nihul'>
                 <h3 class="custom-h1">ניהול מוצרים</h3>
-                <select id='category'>
+                <select id='category' defaultValue={pToUpdate?.categoryCode}>
                     {data?.product?.categories?.map((item, key) => (
                         <option value={key}>{item.categoryName}</option>
                     ))}
                 </select>
-                <input id='productName' placeholder='הכנס שם'></input>
-                <input id='price' placeholder='הכנס מחיר'></input>
-                <textarea id='description' placeholder='הכנס תיאור'></textarea>
+                <input defaultValue={pToUpdate?.productName} id='productName' placeholder='הכנס שם'></input>
+                <input id='price' defaultValue={pToUpdate?.price} placeholder='הכנס מחיר'></input>
+                <textarea id='description' defaultValue={pToUpdate?.description} placeholder='הכנס תיאור'></textarea>
                 {/* מלאי */}
-                <input id='count' type='number' placeholder='הכנס מלאי' ></input>
+                <input id='count' min='1' defaultValue={pToUpdate?.count} type='number' placeholder='הכנס מלאי' ></input>
                 <input type='file' onChange={(e) => setImg(e.target.files[0])}></input>
-                <img src={img ? URL.createObjectURL(img) : ''} style={{ width: '200px' }}></img>
+                
+                <img src={pToUpdate ? pToUpdate?.img : img ? URL.createObjectURL(img) : ''} style={{ width: '200px' }}></img>
                 <input id='color' value={color} onChange={e => setColor(e.target.value)} type='color'></input>
                 <button type='button' class="btn-black-small" onClick={() => {
                     setArrColor([...arrcolor, { color: color }])
@@ -79,7 +96,7 @@ export default function Updates() {
                         <div style={{ backgroundColor: item.color, width: '30px', height: '30px' }}></div>
                     ))}</div>
                 <br />
-                <button type='submit' class="btn-gold-small">הוסף</button>
+                <button type='submit' class="btn-gold-small">{pToUpdate ? "עדכן מוצר" : "הוסף מוצר"}</button>
             </div>
             <div className='nihul'>
                 <h3 class="custom-h1">ניהול קטגוריות</h3>

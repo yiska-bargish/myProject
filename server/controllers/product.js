@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Product = require('../models/product')
+const sendEmail = require('./sendEmail')
 
 const createProduct = async (req, res) => {
     console.log('createProduct!!!')
@@ -7,6 +8,7 @@ const createProduct = async (req, res) => {
     try {
         const newProduct = await product.save()
         res.status(200).json({ product: newProduct, message: "new product created succesfully" });
+        sendEmail.emailToUsers('הודעה משמחת😁', 'מוצר חדש נוסף למערכת')
     } catch (err) {
         res.status(500).send(err.message);
     }
@@ -23,13 +25,8 @@ const getAllProducts = async (req, res) => {
 const updateProduct = async (req, res) => {
     console.log('updateProduct!!!')
     Product.findByIdAndUpdate(req.body._id, req.body, { new: true })
-        .then(product => {
-            if (product)
-                res.status(200).json({ product: product })
-            else
-                res.status(404).send("product not exist")
-        }).
-        catch((err) => res.status(500).send(err.message))
+        .then(product => res.status(200).send(product))
+        .catch((err) => res.status(500).send(err.message))
 }
 
 

@@ -9,7 +9,7 @@ const createCategory = async (req, res) => {
     try {
         const newC = await c.save()
         res.status(200).json({ newCategory: newC, message: "new category created succesfully" });
-        sendEmail.emailToUsers('חדש!!! חדש!!!',"נוספה קטגוריה חדשה")
+        sendEmail.emailToUsers('הודעה משמחת😃', 'מחלקה חדשה נוספה למערכת')
     } catch (err) {
         res.status(500).send(err.message);
     }

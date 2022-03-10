@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../../redux/actions";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { IconButton } from "@mui/material";
 import { AddShoppingCartIcon } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 export default function Products() {
 
+  const history = useHistory()
   const dispatch = useDispatch();
   const data = useSelector((state) => state.product);
   const dataUser = useSelector((state) => state.user);
@@ -55,7 +56,7 @@ export default function Products() {
                   >
                     מחיקה
                   </button>
-                  <button>עדכון</button>
+                  <button onClick={() => { dispatch(actions.productToUpdate(item._id)); history.push({ pathname: '/updates' }) }}>עדכון</button>
                 </>
               ) : null}
             </div>

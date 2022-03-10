@@ -1,5 +1,6 @@
 import produce from 'immer'
 import execHandler from './reducerUtils'
+import actions from '../actions'
 
 const initialState = {
     categories: [],
@@ -8,6 +9,7 @@ const initialState = {
     shoppingCart: [],
     category: null,
     branch: [],
+    pToUpdate: null
 }
 
 const product = {
@@ -64,8 +66,19 @@ const product = {
             state.shoppingCart = state.shoppingCart.filter(x => x.id !== action.payload)
         }
     },
-    resetCart(state,action){
+    resetCart(state, action) {
         state.shoppingCart = []
+    },
+    productToUpdate(state, action) {
+        debugger
+        state.pToUpdate = action.payload
+    },
+    updateProduct(state, action) {
+        debugger
+        let index = state.products.indexOf(state.products.find(x => x._id == action.payload._id))
+        if (index != -1)
+            state.products[index] = action.payload
+        alert(JSON.stringify(state.products[index]))
     },
     initialState
 }

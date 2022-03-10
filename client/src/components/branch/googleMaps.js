@@ -4,12 +4,12 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
  import action from '../../redux/actions'
  
  function MapGoogle(props) {
+
    const dispatch = useDispatch()
    const data = useSelector(state => state)
 
 
 const {lat,lng} = props 
-
 
 //    useEffect(() => {
 //    alert(JSON.stringify(props))
@@ -32,7 +32,8 @@ const {lat,lng} = props
   }
   
   export default GoogleApiWrapper({
-    apiKey: ""
+    //key api
+    apiKey: "AIzaSyD6F5QF6lVOpgYm_FjJAfrMPKFNB26IYBU"
     ,region: 'EB',
     language: 'EB'
   })(MapGoogle);

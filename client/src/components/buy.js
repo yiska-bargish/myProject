@@ -33,11 +33,11 @@ export default function Buy(props) {
         <div className="modal-shop-div" key={key}>
           <h3> {data?.products?.find((x) => x._id == item.id)?.productName}</h3>{" "}
           <img
-            style={{ width: "75px",margin:"0px 5px" }}
+            style={{ width: "75px", margin: "0px 5px" }}
             src={data?.products?.find((x) => x._id == item.id)?.img}
           ></img>
-         
-          <h5> {data?.products?.find((x) => x._id == item.id)?.price}</h5>   
+
+          <h5> {data?.products?.find((x) => x._id == item.id)?.price}</h5>
           {<h5>ש"ח</h5>}
           <lable>
             {/* כמות:{" "} */}
@@ -46,36 +46,38 @@ export default function Buy(props) {
               type="number"
               min="1"
               max={data?.products?.find((x) => x._id == item.id)?.count}
-              onClick={(e) =>
+              onClick={(e) => {
                 dispatch(
-                  actions.updateCart({ id: item.id, count: e.target.value })
-                )
+                  actions.updateCart({ id: item.id, count: e.target.value }))
+                  //עיצוב אילה
+                if (e.target.value == data?.products?.find((x) => x._id == item.id)?.count)
+                  alert('המלאי מוגבל ל' + data?.products?.find((x) => x._id == item.id)?.count + 'יחידות')
+              }
+                //
               }
             ></input>
           </lable>
           <a onClick={() => dispatch(actions.deleteFromCart(item.id))}>X</a>
         </div>
       ))}
+      //
       <h4>כמות המוצרים:{data?.shoppingCart.length}</h4>
       <h4>סה"כ:{sum}</h4>
-      {data.user?.currentUser ? (
+      {/* {data.user?.currentUser ? (
         <div>
-          {/* <h1>פרטים אישיים</h1> */}
-          {/* <h1>{data.user.currentUser.firstname}</h1>
-                    <h1>{data.user.currentUser.lastName}</h1> */}
           <h1>{data.user.currentUser.userName}</h1>
           <h1>{data.user.currentUser.phone}</h1>
           <h1>{data.user.currentUser.emeil}</h1>
         </div>
       ) : (
         <form>
-          {/* <input id="firstname" placeholder="שם פרטי"></input>
+          <input id="firstname" placeholder="שם פרטי"></input>
                     <input id="lastName" placeholder="שם משפחה"></input>
                     <input id="phone" placeholder="טלפון"></input>
-                    <input id="emeil" placeholder="מייל"></input> */}
+                    <input id="emeil" placeholder="מייל"></input>
           <p>כאן מופיעים כל המוצרים שכרגע נמצאים בעגלת הקניות שלכם</p>
         </form>
-      )}
+      )} */}
     </>
   );
 }
