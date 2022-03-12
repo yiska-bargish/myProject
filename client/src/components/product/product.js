@@ -6,6 +6,7 @@ import { IconButton } from "@mui/material";
 import { AddShoppingCartIcon } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Products() {
 
   const history = useHistory()
@@ -49,16 +50,28 @@ export default function Products() {
                   }
                 </div>
               </Link>
-              {dataUser?.currentUser?.password == dataUser?.adminAuth ? (
-                <>
-                  <button
-                    onClick={() => dispatch(actions.deleteProduct(item._id))}
-                  >
-                    מחיקה
-                  </button>
-                  <button onClick={() => { dispatch(actions.productToUpdate(item._id)); history.push({ pathname: '/updates' }) }}>עדכון</button>
-                </>
-              ) : null}
+
+             {dataUser?.currentUser?.password == dataUser?.adminAuth ? ( 
+              <>
+                <div className="footer-wrapper">
+                  <div className="svg-wrapper">
+                    <FontAwesomeIcon
+                      icon={["fas", "ban"]}
+                      onClick={() => dispatch(actions.deleteProduct(item._id))}
+                    />
+                  </div>
+                  <div className="svg-wrapper">
+                    <FontAwesomeIcon
+                      icon={["fas", "pen"]}
+                      onClick={() => dispatch(actions.deleteProduct(item._id))}
+                    />
+                  </div>
+
+             
+                </div>{" "}
+              </>
+               ) : null}
+>>>>>>> 57a60c933c1917501c8accc63f1a0d11a083ed4d
             </div>
           ))}
       </>

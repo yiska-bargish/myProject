@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from '../components/home/home'
 import About from '../components/home/about'
 import NavFunc from '../components/home/nav'
+import NavFooterFunc from '../components/home/navFooter'
 import Products from '../components/product/product'
 import SignIn from '../components/login/signIn'
 import SignUp from '../components/login/signUp'
@@ -39,6 +40,7 @@ export default function Routes() {
                 ))}
                  <Route path="/" component={Home} />
                 </Switch>
+                <NavFooterFunc></NavFooterFunc>
         </Router>
     )
 }

@@ -45,8 +45,8 @@ export default function Home() {
     autoFocus: false,
     thumbWidth: 90,
     selectedItem: 0,
-    interval: 2000,
-    transitionTime: 800,
+    interval: 5000,
+    transitionTime: 3000,
     swipeScrollTolerance: 5,
     ariaLabel: "",
   });
@@ -99,33 +99,7 @@ export default function Home() {
         ))}
       </div>
       <br />
-      <footer className="navBar-container2">
-        <div>
-          <h3>קטגוריות ראשיות</h3>
-          <hr></hr>
-          {categories.map((item, key) => {
-            return (
-              <Link
-                className="link-bottom "
-                key={key}
-                to={`/${item.categoryName}`}
-                onClick={() => dispatch(actions.changeCategory(item._id))}
-              >
-                <p>{item.categoryName}</p>{" "}
-              </Link>
-            );
-          })}
-        </div>
-        <div>
-          <h3>דברו איתנו</h3>
-          <hr></hr>
-          <p>טלפון : 03-7505497</p>
-          <p>פקס : 03-7748439</p>
-          <p>שעות פעילות משרדי החברה : ימים א' – ה': 16:00 - 9:00</p>
-          <br />
-          <p>מייל לפניות לקוחות : cs@hr-l.co.il</p>
-        </div>
-      </footer>
+     
     </>
   );
 }
