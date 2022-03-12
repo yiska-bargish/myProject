@@ -8,7 +8,6 @@ function MapGoogle(props) {
   const dispatch = useDispatch()
   const data = useSelector(state => state)
 
-
   const { lat, lng } = props
 
   //    useEffect(() => {

@@ -13,6 +13,7 @@ import Cart from '../components/cart'
 import Branch from '../components/branch/brands'
 import Details from '../components/product/details'
 import PrivateArea from '../components/privateArea'
+
 export default function Routes() {
 
     // const dispatch = useDispatch()
